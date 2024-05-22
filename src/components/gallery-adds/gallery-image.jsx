@@ -1,53 +1,55 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 
-const GalleryImage = ({ imageId, altText, handleOpenFullImage, key }) => {
-  const [isImageLoaded, setIsImageLoaded] = useState(null);
+// const GalleryImage = ({
+//   imageUrl = "h",
+//   altText,
+//   handleOpenFullImage,
+//   key,
+// }) => {
+//   const [isImageLoaded, setIsImageLoaded] = useState(null);
 
-  useEffect(() => {
-    const loadImage = () => {
-      if (imageId) {
-        // Replace 'your_cloud_name', 'your_api_key', and 'your_api_secret' with your Cloudinary credentials
-        const cloudName = "palnet";
-        const apiKey = "your_api_key";
-        const apiSecret = "your_api_secret";
+//   useEffect(() => {
+//     const loadImage = () => {
+//       if (imageUrl) {
+//         fetch(imageUrl)
+//           .then((response) => response.blob())
+//           .then((blob) => {
+//             const reader = new FileReader();
+//             reader.onloadend = () => {
+//               setIsImageLoaded(reader.result);
+//             };
+//             reader.readAsDataURL(blob);
+//           })
+//           .catch((error) => {
+//             console.error("Error loading image:", error);
+//             setIsImageLoaded(null);
+//           });
+//       }
+//     };
 
-        const imageUrl = `https://res.cloudinary.com/${cloudName}/image/upload/v1/${imageId}`;
+//     loadImage();
+//   }, [imageUrl]);
 
-        fetch(imageUrl)
-          .then((response) => response.blob())
-          .then((blob) => {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-              setIsImageLoaded(reader.result);
-            };
-            reader.readAsDataURL(blob);
-          })
-          .catch((error) => {
-            console.error("Error loading image:", error);
-            setIsImageLoaded(null);
-          });
-      }
-    };
+//   return (
+//     <div className="image" key={key}>
+//       {isImageLoaded ? (
+//         <img
+//           onClick={handleOpenFullImage}
+//           src={isImageLoaded}
+//           className={`${isImageLoaded ? "fadeIn" : ""}`}
+//           alt={altText || "Image"}
+//         />
+//       ) : (
+//         // <div className="loading-shimmer"></div>
+//         <img
+//           onClick={handleOpenFullImage}
+//           src={imageUrl}
+//           className={`${isImageLoaded ? "fadeIn" : ""}`}
+//           alt={altText || "Image"}
+//         />
+//       )}
+//     </div>
+//   );
+// };
 
-    loadImage();
-  }, [imageId]);
-
-  return (
-    <div className="image" key={key}>
-      {isImageLoaded ? (
-        <img
-          onClick={handleOpenFullImage}
-          src={isImageLoaded}
-          className={`${isImageLoaded ? "fadeIn" : ""}`}
-          alt={altText || "Image"}
-        />
-      ) : (
-        // <div className="loading-shimmer"></div>
-        // <p>Loading...</p>
-        <div className="loading-shimmer"></div>
-      )}
-    </div>
-  );
-};
-
-export default GalleryImage;
+// export default GalleryImage;

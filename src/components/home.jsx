@@ -40,7 +40,7 @@ const Home = () => {
             ref={pRef}
             style={{ "--delay": "200ms" }}
           >
-            Welcome At TAK Kniship, we don't just build projects; we engineer
+            Welcome At TAK Kinship, we don't just build projects; we engineer
             solutions that redefine possibilities. As a growing tech startup,
             our passion is to harness cutting-edge technology to address
             real-world challenges and shape the future.

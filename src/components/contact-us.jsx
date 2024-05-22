@@ -39,7 +39,7 @@ const ContactUs = ({ setIsLoading }) => {
 
     try {
       const response = await fetch(
-        "https://tak-devs-web-6dd969e7026b.herokuapp.com/api/contact-us/",
+        "https://tak-kinship.masaba-kenneth.info/api/contact-us/",
         {
           method: "POST",
 
@@ -129,7 +129,7 @@ const ContactUs = ({ setIsLoading }) => {
     const handleFetchContactUsInfo = async () => {
       try {
         const response = await axios.get(
-          "https://tak-devs-web-6dd969e7026b.herokuapp.com/api/contact-company-info/",
+          "https://tak-kinship.masaba-kenneth.info/api/contact-company-info/",
           {
             headers: configHeaders,
           }
@@ -347,15 +347,23 @@ const ContactUs = ({ setIsLoading }) => {
           </form>
         </div>
       </main>
+      {/* <iframe
+        ref={mapRef}
+        className={`map mapHidden ${mapInview ? "mapInView" : ""}`}
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d498.6981109405955!2d30.6877306!3d-0.6197894!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19d91b1b930db6e1%3A0xe0f6eaaefba85d63!2sKarugangama!5e0!3m2!1sen!2sug!4v1710153721348!5m2!1sen!2sug"
+        height="450"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe> */}
       <iframe
         ref={mapRef}
-        // className="map"
         className={`map mapHidden ${mapInview ? "mapInView" : ""}`}
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15958.990986416016!2d32.605144266889205!3d0.34078719999999485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sug!4v1707600922541!5m2!1sen!2sug"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31916.785333621287!2d30.679970599999997!3d-0.6019023000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19d91b12361d180d%3A0xea4f4584d2c4456d!2sKakoba%20Division%2C%20Mbarara!5e0!3m2!1sen!2sug!4v1716414493388!5m2!1sen!2sug"
         height="450"
-        allowFullScreen=""
+        allowfullscreen=""
         loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
+        referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
     </div>
   );

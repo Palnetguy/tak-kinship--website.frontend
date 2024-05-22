@@ -1,10 +1,10 @@
-# TAK Kniship Devs Frontend
+# TAK Kinship Devs Frontend
 
-Welcome to the TAK Kniship Devs Frontend repository – where innovation meets pixels! 🚀
+Welcome to the TAK Kinship Devs Frontend repository – where innovation meets pixels! 🚀
 
 ## Overview
 
-TAK Kniship Dev is not just a website; it's a portal to the future. Explore the frontend that powers our digital journey, bringing together creativity, functionality, and a touch of magic.
+TAK Kinship Dev is not just a website; it's a portal to the future. Explore the frontend that powers our digital journey, bringing together creativity, functionality, and a touch of magic.
 
 ## Features
 
@@ -16,7 +16,7 @@ TAK Kniship Dev is not just a website; it's a portal to the future. Explore the 
 ## Getting Started
 
 1. **Contribute:**
-    Found a bug? Have an idea? We welcome contributions! Open an issue or submit a pull request.
+   Found a bug? Have an idea? We welcome contributions! Open an issue or submit a pull request.
 
 ## Tech Stack
 
@@ -26,7 +26,6 @@ TAK Kniship Dev is not just a website; it's a portal to the future. Explore the 
 - React
 
 ## Gallery
-
 
 ## Feedback
 
@@ -42,4 +41,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-Crafted with ❤️ by the TAK Kniship Devs Team
+Crafted with ❤️ by the TAK Kinship Devs Team

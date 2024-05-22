@@ -46,7 +46,7 @@ const Clients = ({ setIsLoading }) => {
     const handleFetchWorkExperience = async () => {
       try {
         const response = await axios.get(
-          "https://tak-devs-web-6dd969e7026b.herokuapp.com/api/work-experience/",
+          "https://tak-kinship.masaba-kenneth.info/api/work-experience/",
           {
             headers: configHeaders,
           }

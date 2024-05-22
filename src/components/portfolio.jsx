@@ -16,7 +16,7 @@ const Portfolio = ({ setIsLoading }) => {
     const handleFetchProjects = async () => {
       try {
         const response = await axios.get(
-          "https://tak-devs-web-6dd969e7026b.herokuapp.com/api/projects/",
+          "https://tak-kinship.masaba-kenneth.info/api/projects/",
           {
             headers: configHeaders,
           }
@@ -131,7 +131,7 @@ const Portfolio = ({ setIsLoading }) => {
                 }`}
               >
                 <img
-                  src={`${configImages}${e.project_background_image}`}
+                  src={`${e.project_background_image}`}
                   alt="app-img"
                   className="back-Img"
                 />

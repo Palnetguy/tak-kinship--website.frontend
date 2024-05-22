@@ -38,7 +38,7 @@ const FAQComponent = ({ setIsLoading }) => {
     const handleFetchFaqs = async () => {
       try {
         const response = await axios.get(
-          `https://tak-devs-web-6dd969e7026b.herokuapp.com/api/faqs/`,
+          `https://tak-kinship.masaba-kenneth.info/api/faqs/`,
           {
             headers: configHeaders,
           }

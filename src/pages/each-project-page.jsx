@@ -31,7 +31,7 @@ const EachProject = ({ setAllDoneLoading }) => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `https://tak-devs-web-6dd969e7026b.herokuapp.com/api/project/${paramsObj.projectId}`,
+          `https://tak-kinship.masaba-kenneth.info/api/project/${paramsObj.projectId}`,
           {
             headers: configHeaders,
           }
@@ -43,7 +43,7 @@ const EachProject = ({ setAllDoneLoading }) => {
         if (response.data.type == "Web") {
           try {
             const response = await axios.get(
-              `https://tak-devs-web-6dd969e7026b.herokuapp.com/api/project/${paramsObj.projectId}/web-applications/`,
+              `https://tak-kinship.masaba-kenneth.info/api/project/${paramsObj.projectId}/web-applications/`,
               {
                 headers: configHeaders,
               }

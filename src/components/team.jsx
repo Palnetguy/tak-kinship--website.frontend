@@ -35,7 +35,7 @@ const Team = ({ setIsLoading }) => {
     const handleFetchTestimonials = async () => {
       try {
         const response = await axios.get(
-          `https://tak-devs-web-6dd969e7026b.herokuapp.com/api/team-members/`,
+          `https://tak-kinship.masaba-kenneth.info/api/team-members/`,
           {
             headers: configHeaders,
           }
@@ -95,7 +95,7 @@ const Team = ({ setIsLoading }) => {
       >
         Our team is a blend of creativity, expertise, and passion. Together, we
         form a powerhouse that turns ideas into reality. Get to know the minds
-        driving TAK Kniship Dev's success.
+        driving TAK Kinship Dev's success.
       </p>
 
       <div className="profileCardContainer">

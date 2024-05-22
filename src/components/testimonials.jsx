@@ -84,7 +84,7 @@ const Testimonials = ({ setIsLoading }) => {
     const handleFetchTestimonials = async () => {
       try {
         const response = await axios.get(
-          `https://tak-devs-web-6dd969e7026b.herokuapp.com/api/testimonials/`,
+          `https://tak-kinship.masaba-kenneth.info/api/testimonials/`,
           {
             headers: configHeaders,
           }
@@ -190,10 +190,7 @@ const Testimonials = ({ setIsLoading }) => {
                 <div className="heading">
                   <div className="profileImg">
                     {/* Assuming you have the image URL for the profile */}
-                    <img
-                      src={`${configImages}${testimonial.user_photo}`}
-                      alt=""
-                    />
+                    <img src={`${testimonial.user_photo}`} alt="" />
                   </div>
                   <div className="nameProf">
                     <h1 className="title-2">{testimonial.name}</h1>

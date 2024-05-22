@@ -51,7 +51,7 @@ const PortfolioPage = ({ setAllDoneLoading }) => {
       <OtherPageBanner
         pageName="PORTIFOLIO"
         title="Our Portifolio"
-        infomation="Welcome to the TAK Kniship Portfolio – where every project is a testament to innovation, a journey into excellence, and a canvas painted with the strokes of transformative technology."
+        infomation="Welcome to the TAK Kinship Portfolio – where every project is a testament to innovation, a journey into excellence, and a canvas painted with the strokes of transformative technology."
       />
       <Portfolio setIsLoading={handleLoadingPortFolio} />
       <FAQComponent setIsLoading={handleLoadingFaQs} />

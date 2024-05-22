@@ -47,7 +47,7 @@ const Footer = ({ setIsLoading }) => {
     const handleFetchContactUsInfo = async () => {
       try {
         const response = await axios.get(
-          "https://tak-devs-web-6dd969e7026b.herokuapp.com/api/contact-company-info/",
+          "https://tak-kinship.masaba-kenneth.info/api/contact-company-info/",
           {
             headers: configHeaders,
           }
@@ -178,31 +178,33 @@ const Footer = ({ setIsLoading }) => {
         </div>
         <div class="ref-links footer_element_animated">
           <h4>Follow Us</h4>
-          <ul class="">
-            <li class="" style={{ "--delay": "000ms" }}>
-              <img src={chevronRight} alt="" />
-              <a href="#">Discord</a>
-            </li>
-            <li class="" style={{ "--delay": "100ms" }}>
-              <img src={chevronRight} alt="" />
-              <a href="#">Instagram</a>
-            </li>
-            <li class="" style={{ "--delay": "200ms" }}>
-              <img src={chevronRight} alt="" />
-              <a href="#">Linkedin</a>
-            </li>
-            <li class="" style={{ "--delay": "300ms" }}>
-              <img src={chevronRight} alt="" />
-              <a href="#">X</a>
-            </li>
-          </ul>
+          {contactUsInfo.map((e) => (
+            <ul class="">
+              <li class="" style={{ "--delay": "000ms" }}>
+                <img src={chevronRight} alt="" />
+                <a href={e.skype}>Skype</a>
+              </li>
+              <li class="" style={{ "--delay": "100ms" }}>
+                <img src={chevronRight} alt="" />
+                <a href={e.instgram}>Instagram</a>
+              </li>
+              <li class="" style={{ "--delay": "200ms" }}>
+                <img src={chevronRight} alt="" />
+                <a href={e.linkedIn}>Linkedin</a>
+              </li>
+              <li class="" style={{ "--delay": "300ms" }}>
+                <img src={chevronRight} alt="" />
+                <a href={e.twitter}>X</a>
+              </li>
+            </ul>
+          ))}
         </div>
         <div class="ref-links footer_element_animated">
           <h4>our services</h4>
           <ul class="">
             <li class="" style={{ "--delay": "000ms" }}>
               <img src={chevronRight} alt="" />
-              <a href="#">digital marketing</a>
+              <a href="#">app developement</a>
             </li>
             <li class="" style={{ "--delay": "100ms" }}>
               <img src={chevronRight} alt="" />
@@ -210,11 +212,11 @@ const Footer = ({ setIsLoading }) => {
             </li>
             <li class="" style={{ "--delay": "200ms" }}>
               <img src={chevronRight} alt="" />
-              <a href="#">cyber security</a>
+              <a href="#">desktop developement</a>
             </li>
             <li class="" style={{ "--delay": "300ms" }}>
               <img src={chevronRight} alt="" />
-              <a href="#">graphic design</a>
+              <a href="#">UI/UX developement</a>
             </li>
           </ul>
         </div>
@@ -222,7 +224,7 @@ const Footer = ({ setIsLoading }) => {
       <hr />
       <div className="bottom">
         <p class="creadits">
-          © 2024 Created by: <a href="#">palnet</a>
+          © 2024 Created by: <a href="#">TAK Kinship</a>
         </p>
         <div>
           <a href="">Privacy Policy</a>

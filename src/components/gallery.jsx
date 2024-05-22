@@ -12,13 +12,14 @@ const Gallery = ({ setIsLoading }) => {
     const handleFetchImages = async () => {
       try {
         const response = await axios.get(
-          "https://tak-devs-web-6dd969e7026b.herokuapp.com/api/gallery/",
+          "https://tak-kinship.masaba-kenneth.info/api/gallery/",
           {
             headers: configHeaders,
           }
         );
         setIsLoading(false);
         console.log(response);
+        console.log("test");
         console.log(response.data);
         setImages(response.data);
       } catch (error) {
@@ -68,14 +69,16 @@ const Gallery = ({ setIsLoading }) => {
           alt=""
         />
       </div>
-      {/* <img onClick={handleOpenFullImage} src={image1} alt="" /> */}
+      {/* <img onClick={handleOpenFullImage} src={image} alt="" /> */}
       {images.map((e) => (
-        <GalleryImage
-          imageId={`${e.image}`}
-          altText="test"
-          handleOpenFullImage={handleOpenFullImage}
-          key={e.image}
-        />
+        <div className="image" key={e.id}>
+          <img
+            // key={e.id}
+            onClick={handleOpenFullImage}
+            src={e.image}
+            alt={"Image"}
+          />
+        </div>
       ))}
     </div>
   );
