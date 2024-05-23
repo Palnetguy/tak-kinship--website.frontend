@@ -109,7 +109,7 @@ const Team = ({ setIsLoading }) => {
               }`}
             >
               <div className="proImg">
-                <img src={`${configImages}${e.profile_picture}`} alt="" />
+                <img src={`${e.profile_picture}`} alt="" />
               </div>
               <h3 className="title-2">{e.name}</h3>
               <h6>{e.role}</h6>
