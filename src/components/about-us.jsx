@@ -344,7 +344,7 @@ const AboutUs = ({ setIsLoading }) => {
             }`}
             ref={pretitle8Ref}
           >
-            We Are Here With {new Date().getFullYear() - 2019} Years Of
+            We Are Here With {new Date().getFullYear() - 2019}+ Years Of
             <span className="unique-text"> Experience</span>
           </h1>
           <p
