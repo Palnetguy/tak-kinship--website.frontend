@@ -351,7 +351,7 @@ const AboutUs = ({ setIsLoading }) => {
             className={` titleNotSeen ${pretitle9Inview ? "titleInView" : ""}`}
             ref={pretitle9Ref}
           >
-            With {new Date().getFullYear() - 2019} years of seasoned experience,
+            With {new Date().getFullYear() - 2019}+ years of seasoned experience,
             we bring proficiency to every project. Yet, we embrace each new
             challenge with a commitment to continual learning, ensuring our
             expertise evolves with the ever-changing landscape of technology.
