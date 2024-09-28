@@ -344,14 +344,14 @@ const AboutUs = ({ setIsLoading }) => {
             }`}
             ref={pretitle8Ref}
           >
-            We Are Here With {new Date().getFullYear() - 2019} Years Of
+            We Are Here With {new Date().getFullYear() - 2019}+ Years Of
             <span className="unique-text"> Experience</span>
           </h1>
           <p
             className={` titleNotSeen ${pretitle9Inview ? "titleInView" : ""}`}
             ref={pretitle9Ref}
           >
-            With {new Date().getFullYear() - 2019} years of seasoned experience,
+            With {new Date().getFullYear() - 2019}+ years of seasoned experience,
             we bring proficiency to every project. Yet, we embrace each new
             challenge with a commitment to continual learning, ensuring our
             expertise evolves with the ever-changing landscape of technology.
