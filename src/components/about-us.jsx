@@ -291,7 +291,7 @@ const AboutUs = ({ setIsLoading }) => {
         </div>
       </main>
       {/*  */}
-      <main className="left-right we-deals">
+      <main className="left-right we-deals ">
         <div className="ltl-home">
           <h1
             // className="title"
