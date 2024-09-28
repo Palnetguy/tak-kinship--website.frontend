@@ -39,7 +39,7 @@ const ContactUs = ({ setIsLoading }) => {
 
     try {
       const response = await fetch(
-        "https://tak-kinship.masaba-kenneth.info/api/contact-us/",
+        "https://takkinship-backend.up.railway.app/api/contact-us/",
         {
           method: "POST",
 
@@ -129,7 +129,7 @@ const ContactUs = ({ setIsLoading }) => {
     const handleFetchContactUsInfo = async () => {
       try {
         const response = await axios.get(
-          "https://tak-kinship.masaba-kenneth.info/api/contact-company-info/",
+          "https://takkinship-backend.up.railway.app/api/contact-company-info/",
           {
             headers: configHeaders,
           }

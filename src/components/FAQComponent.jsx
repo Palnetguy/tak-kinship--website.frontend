@@ -38,7 +38,7 @@ const FAQComponent = ({ setIsLoading }) => {
     const handleFetchFaqs = async () => {
       try {
         const response = await axios.get(
-          `https://tak-kinship.masaba-kenneth.info/api/faqs/`,
+          `https://takkinship-backend.up.railway.app/api/faqs/`,
           {
             headers: configHeaders,
           }

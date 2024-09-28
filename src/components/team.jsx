@@ -35,7 +35,7 @@ const Team = ({ setIsLoading }) => {
     const handleFetchTestimonials = async () => {
       try {
         const response = await axios.get(
-          `https://tak-kinship.masaba-kenneth.info/api/team-members/`,
+          `https://takkinship-backend.up.railway.app/api/team-members/`,
           {
             headers: configHeaders,
           }

@@ -47,7 +47,7 @@ const Footer = ({ setIsLoading }) => {
     const handleFetchContactUsInfo = async () => {
       try {
         const response = await axios.get(
-          "https://tak-kinship.masaba-kenneth.info/api/contact-company-info/",
+          "https://takkinship-backend.up.railway.app/api/contact-company-info/",
           {
             headers: configHeaders,
           }

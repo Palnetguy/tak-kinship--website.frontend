@@ -12,7 +12,7 @@ const Gallery = ({ setIsLoading }) => {
     const handleFetchImages = async () => {
       try {
         const response = await axios.get(
-          "https://tak-kinship.masaba-kenneth.info/api/gallery/",
+          "https://takkinship-backend.up.railway.app/api/gallery/",
           {
             headers: configHeaders,
           }

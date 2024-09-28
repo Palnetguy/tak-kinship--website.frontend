@@ -16,7 +16,7 @@ const Portfolio = ({ setIsLoading }) => {
     const handleFetchProjects = async () => {
       try {
         const response = await axios.get(
-          "https://tak-kinship.masaba-kenneth.info/api/projects/",
+          "https://takkinship-backend.up.railway.app/api/projects/",
           {
             headers: configHeaders,
           }

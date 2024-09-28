@@ -153,7 +153,7 @@ const AboutUs = ({ setIsLoading }) => {
     const handleFetchWorkExperience = async () => {
       try {
         const response = await axios.get(
-          "https://tak-kinship.masaba-kenneth.info/api/work-experience/",
+          "https://takkinship-backend.up.railway.app/api/work-experience/",
           {
             headers: configHeaders,
           }

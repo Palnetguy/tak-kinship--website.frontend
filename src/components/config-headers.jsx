@@ -1,5 +1,5 @@
 const configHeaders = {
-  Authorization: "Api-Key uGWedQz4.eddhfUsEBhbBsCuXzXgzX5xs2RzrRUNn",
+  Authorization: "Api-Key LaaXj3ft.hGbRWxHo6KKsYGJ9SYdTRhwBBGo5fELG",
   "content-type": "application/json",
 };
 

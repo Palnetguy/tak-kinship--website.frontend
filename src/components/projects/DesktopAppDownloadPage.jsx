@@ -24,7 +24,7 @@ import configHeaders from "../config-headers";
 
 const DesktopDownloadPage = ({ projectId, type }) => {
   const [appVersions, setAppVersions] = useState([]);
-  const api = `https://tak-kinship.masaba-kenneth.info/api/project/${projectId}/${
+  const api = `https://takkinship-backend.up.railway.app/api/project/${projectId}/${
     type == "Desktop" ? "desktop-applications" : "mobile-applications"
   }/`;
 
@@ -34,12 +34,12 @@ const DesktopDownloadPage = ({ projectId, type }) => {
     const handleProjectDownloads = async () => {
       try {
         const response = await axios.get(
-          // `https://tak-kinship.masaba-kenneth.info/api/project/${projectId}/${
+          // `https://takkinship-backend.up.railway.app/api/project/${projectId}/${
           //   type == "Desktop" ? "desktop-applications" : "mobile-applications"
           // }/`,
 
-          `https://tak-kinship.masaba-kenneth.info/api/project/${projectId}/desktop-applications/`,
-          // "https://tak-kinship.masaba-kenneth.info/api/project/${projectId}/mobile-applications/",
+          `https://takkinship-backend.up.railway.app/api/project/${projectId}/desktop-applications/`,
+          // "https://takkinship-backend.up.railway.app/api/project/${projectId}/mobile-applications/",
           {
             headers: configHeaders,
           }

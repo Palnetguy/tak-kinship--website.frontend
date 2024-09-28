@@ -84,7 +84,7 @@ const Testimonials = ({ setIsLoading }) => {
     const handleFetchTestimonials = async () => {
       try {
         const response = await axios.get(
-          `https://tak-kinship.masaba-kenneth.info/api/testimonials/`,
+          `https://takkinship-backend.up.railway.app/api/testimonials/`,
           {
             headers: configHeaders,
           }
