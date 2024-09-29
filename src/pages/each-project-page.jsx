@@ -19,16 +19,43 @@ import configHeaders from "../components/config-headers";
 import { useInView } from "react-intersection-observer";
 import configImages from "../components/configImages";
 
-const EachProject = ({ setAllDoneLoading }) => {
+const EachProject = ({ setAllDoneLoading, handlePolicy, handleTerms, handleProjId }) => {
   const paramsObj = useParams();
+  console.log(paramsObj);
   const [projectData, setProjectData] = useState({});
   const [projectWeb, setProjectWeb] = useState([]);
-  const [isLoading, setLoading] = useState(true);
+  const [isLoadingMain, setLoadingMain] = useState(true);
+  const [isLoadingPolicy, setLoadingPolicy] = useState(true);
+  const [isLoadingTerms, setLoadingTerms] = useState(true);
 
-  console.log(paramsObj);
+  //   var policyInfo = `
+  //   policy  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
+
+  // Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit.
+
+  // Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit.
+
+  // Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris.
+
+  // Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet.
+  //   `;
+  //   handlePolicy(policyInfo);
+
+  //   var termsInfo = `
+  //   terms  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
+
+  // Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit.
+
+  // Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit.
+
+  // Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris.
+
+  // Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet.
+  //   `;
+  //   handleTerms(termsInfo);
   useEffect(() => {
     const handleFetchProject = async () => {
-      setLoading(true);
+      setLoadingMain(true);
       try {
         const response = await axios.get(
           `https://takkinship-backend.up.railway.app/api/project/${paramsObj.projectId}`,
@@ -54,12 +81,58 @@ const EachProject = ({ setAllDoneLoading }) => {
             console.log(error);
           }
         }
-        setLoading(false);
+        setLoadingMain(false);
       } catch (error) {
         console.log(error);
       }
     };
     handleFetchProject();
+  }, []);
+  useEffect(() => {
+    const handleFetchPolicy = async () => {
+      setLoadingPolicy(true);
+      try {
+        const response = await axios.get(
+          // `https://takkinship-backend.up.railway.app/api/project/${paramsObj.projectId}`,
+          `https://takkinship-backend.up.railway.app/api/projects/${paramsObj.projectId}/policy/`,
+          {
+            headers: configHeaders,
+          }
+        );
+        // console.log(response);
+        console.log(response.data.description);
+        // setProjectData(response.data);
+        handlePolicy(response.data.description);
+        // console.log(response.data.type);
+        setLoadingPolicy(false);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    handleFetchPolicy();
+  }, []);
+  useEffect(() => {
+    const handleFetchPolicy = async () => {
+      setLoadingTerms(true);
+      try {
+        const response = await axios.get(
+          // `https://takkinship-backend.up.railway.app/api/project/${paramsObj.projectId}`,
+          `https://takkinship-backend.up.railway.app/api/projects/${paramsObj.projectId}/terms/`,
+          {
+            headers: configHeaders,
+          }
+        );
+        // console.log(response);
+        console.log(response.data.description);
+        // setProjectData(response.data);
+        // console.log(response.data.type);
+        handleTerms(response.data.description);
+        setLoadingTerms(false);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    handleFetchPolicy();
   }, []);
 
   const [sideLeftRef, sideLeftInview] = useInView({
@@ -90,15 +163,30 @@ const EachProject = ({ setAllDoneLoading }) => {
   };
 
   useEffect(() => {
-    if (!loadingFaQs && !isLoading && !loadingContactInfo && !loadingFooter) {
+    if (
+      !loadingFaQs &&
+      !loadingContactInfo &&
+      !loadingFooter &&
+      !isLoadingMain &&
+      !isLoadingPolicy &&
+      !isLoadingTerms
+    ) {
       console.log("all Done ------------------------------------");
-      console.log(loadingFaQs, isLoading);
+      console.log(loadingFaQs);
       setAllDoneLoading(true);
     } else {
       console.log("all Start xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-      console.log(loadingFaQs, isLoading, loadingContactInfo);
+      console.log(loadingFaQs, loadingContactInfo);
     }
-  }, [loadingFaQs, isLoading, loadingContactInfo, loadingFooter]);
+  }, [
+    loadingFaQs,
+
+    loadingContactInfo,
+    loadingFooter,
+    isLoadingMain,
+    isLoadingPolicy,
+    isLoadingTerms,
+  ]);
 
   return (
     <section>
@@ -146,6 +234,18 @@ const EachProject = ({ setAllDoneLoading }) => {
                     type={paramsObj.type}
                   />
                 ))}
+            </div>
+            <div className="pr-tm">
+              <Link
+                to={`/portfolio/project/${paramsObj.projectId}/${projectData.type}/policies`}
+              >
+                <p>Privacy Policy</p>
+              </Link>
+              <Link
+                to={`/portfolio/project/${paramsObj.projectId}/${projectData.type}/terms`}
+              >
+                <p>Terms</p>
+              </Link>
             </div>
           </div>
           <div className="rht-home ">

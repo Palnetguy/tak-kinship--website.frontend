@@ -108,3 +108,18 @@
   opacity: 1 !important;
   transform: translate3d(0, 0, 0) !important;
 }
+
+.project .pr-tm {
+  display: flex;
+  margin-top: 1em;
+}
+.project .pr-tm p {
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.project .pr-tm p:hover {
+  color: var(--brand-color);
+}
+.project .pr-tm p:nth-child(1) {
+  margin-right: 2em;
+}

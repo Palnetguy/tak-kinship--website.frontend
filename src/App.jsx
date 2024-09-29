@@ -18,6 +18,8 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import ArrowBackUp from "./components/arrowBackUp";
 import PreLoaderFull from "./components/preLoaderFull";
+import TermsPage from "./pages/terms_page";
+import PrivacyPage from "./pages/privacy_policy_page ";
 
 function App() {
   useEffect(() => {
@@ -42,7 +44,7 @@ function App() {
 
   // console.log(window.scroll);
 
-  const [loadingAll, setLoadingAll] = useState(false);
+  const [loadingAll, setLoadingAll] = useState(false); // change it after
 
   const handleLoadingAll = (isLoading) => {
     setLoadingAll(isLoading);
@@ -53,6 +55,19 @@ function App() {
       console.log("Page done Loading");
     }
   }, [loadingAll]);
+
+  const [policyInfo, setPolicyInfo] = useState("");
+  const [termsInfo, setTermsInfo] = useState("");
+
+  function handlePolicy(value) {
+    // console.log(value);
+    setPolicyInfo(value);
+  }
+
+  function handleTerms(value) {
+    // console.log(value);
+    setTermsInfo(value);
+  }
 
   return (
     <>
@@ -65,6 +80,7 @@ function App() {
           <NavigationBar className={"mobile"} />
           <ArrowBackUp />
           {/* <HomePage /> */}
+          {/* <PrivacyPage /> */}
           <Routes>
             <Route
               path="/"
@@ -92,7 +108,33 @@ function App() {
             />
             <Route
               path="/portfolio/project/:projectId/:type"
-              element={<EachProject setAllDoneLoading={handleLoadingAll} />}
+              element={
+                <EachProject
+                  setAllDoneLoading={handleLoadingAll}
+                  handlePolicy={handlePolicy}
+                  handleTerms={handleTerms}
+                />
+              }
+            />
+            <Route
+              path="/portfolio/project/:projectId/:type/policies"
+              // element={<EachProject setAllDoneLoading={handleLoadingAll} />}
+              element={
+                <PrivacyPage
+                  policyInfo={policyInfo}
+                  setAllDoneLoading={handleLoadingAll}
+                />
+              }
+            />
+            <Route
+              path="/portfolio/project/:projectId/:type/terms"
+              // element={<EachProject setAllDoneLoading={handleLoadingAll} />}
+              element={
+                <TermsPage
+                  termsInfo={termsInfo}
+                  setAllDoneLoading={handleLoadingAll}
+                />
+              }
             />
           </Routes>
         </Router>
